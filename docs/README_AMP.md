@@ -1,6 +1,3 @@
----
-sidebar_position: 1
----
 # AMP 安装包
 
 ## 一.安装包构成
