@@ -25,8 +25,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "zh-Hans",
-    locales: ["zh-Hans"],
+    defaultLocale: "zh-CN",
+    locales: ["zh-CN"],
   },
 
   presets: [
@@ -35,7 +35,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          routeBasePath: '/'
+          routeBasePath: "/",
         },
         blog: {
           showReadingTime: true,
@@ -51,24 +51,19 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "My Site",
+      title: "Tuna",
       logo: {
-        alt: "My Site Logo",
+        alt: "Logo",
         src: "img/logo.svg",
       },
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          label: "Docs",
           position: "left",
-          label: "Tutorial",
+          sidebarId: "docs",
         },
         { to: "/blog", label: "Blog", position: "left" },
-        {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
-          position: "right",
-        },
       ],
     },
     footer: {
@@ -119,6 +114,9 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    colorMode: {
+      respectPrefersColorScheme: true,
     },
   } satisfies Preset.ThemeConfig,
 };

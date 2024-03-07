@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "nhoizey.gremlins",
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-checkbox",
+    "shd101wyy.markdown-preview-enhanced",
+    "bierner.markdown-mermaid",
+    "darkriszty.markdown-table-prettify",
+    "davidanson.vscode-markdownlint",
+    "unifiedjs.vscode-mdx",
+    "jock.svg",
+    "simonsiefke.svg-preview",
+    "bradlc.vscode-tailwindcss",
+    "redhat.vscode-yaml"
+  ]
+}
