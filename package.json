@@ -3,14 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "docusaurus": "docusaurus",
     "dev": "docusaurus start --no-open",
     "build": "docusaurus build",
-    "deploy": "docusaurus deploy",
     "clean": "docusaurus clear",
-    "preview": "docusaurus serve --no-open --port $(get-port)",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "preview": "docusaurus serve --no-open"
   },
   "dependencies": {
     "@docusaurus/core": "3.1.1",
@@ -27,7 +23,6 @@
     "@docusaurus/tsconfig": "3.1.1",
     "@docusaurus/types": "3.1.1",
     "@types/node": "^20.11.10",
-    "get-port-cli": "^3.0.0",
     "prettier": "^3.2.4",
     "typescript": "~5.2.2"
   },
