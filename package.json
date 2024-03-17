@@ -6,7 +6,8 @@
     "dev": "docusaurus start --no-open",
     "build": "docusaurus build",
     "clean": "docusaurus clear",
-    "preview": "docusaurus serve --no-open"
+    "preview": "docusaurus serve --no-open",
+    "write-translations": "docusaurus write-translations"
   },
   "dependencies": {
     "@docusaurus/core": "3.1.1",

@@ -17,7 +17,7 @@ title: AMP 安装包
 ### 2.2 配置无密码访问
 
 配置安装节点到容器集群节点的ssh免密登录，以及第一个master节点到node节点之间的ssh免密登录。
-(sync_host 是将master[0]上的 /etc/hosts 同步到其他node 节点，因此需要 从 master[0]可以免密登录其他node节点)
+(`sync_host` 是将 `master[0]` 上的 `/etc/hosts` 同步到其他node 节点，因此需要 从 `master[0]`可以免密登录其他node节点)
 
 ### 2.3 加载安装镜像
 

@@ -63,7 +63,7 @@ const config: Config = {
           position: "left",
           sidebarId: "docs",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        // { to: "/blog", label: "Blog", position: "left" },
       ],
     },
     footer: {
