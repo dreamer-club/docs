@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[237],{3923:(s,c,e)=>{e.r(c),e.d(c,{default:()=>a});var t=e(8903),u=e(1527);function a(){return(0,u.jsx)(t.l_,{to:"/docs/amp-install"})}}}]);
