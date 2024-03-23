@@ -1,5 +1,5 @@
 ---
-title: AMP 安装包
+title: K8S&AMP 安装步骤
 ---
 
 ## 一.安装包构成
