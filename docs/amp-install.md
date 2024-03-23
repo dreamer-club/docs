@@ -67,3 +67,16 @@ Centos7.9 minimal
 Ubuntu 20.04 LTS
 KylinOS V10 server
 ```
+## 四. 添加k8s worker节点
+1. 编辑hosts.yaml文件，将需要增加的worker节点信息添加进去，保存。
+2. 执行 ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root scale.yml
+## 五. 删除k8s worker节点
+1. 如果要删除的节点仍然处于Ready状态，执行 ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root remove-node.yml -e node=NODE_NAME 将NODE_NAME替换成要删除的节点名称
+2. 如果要删除的节点已离线，执行ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root remove-node.yml -e node=NODE_NAME -e reset_nodes=false -e allow_ungraceful_removal=true 强制删除节点。将NODE_NAME替换成要删除的节点名称
+3. 编辑host.yaml将已删除节点的信息去除。
+## 六. 添加k8s master节点
+1. 编辑hosts.yaml文件，将需要增加的master 节点信息添加进去，保存。
+2. 执行 ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root cluster.yml
+## 七. 删除k8s master节点
+1. 如果要删除的节点仍然处于Ready状态，执行ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root remove-node.yml -e node=NODE_NAME  将NODE_NAME替换成要删除的节点名称
+2. 如果要删除的节点已离线，执行ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root remove-node.yml -e node=NODE_NAME -e reset_nodes=false -e allow_ungraceful_removal=true 强制删除节点。将NODE_NAME替换成要删除的节点名称
