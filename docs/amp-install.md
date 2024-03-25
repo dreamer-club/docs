@@ -4,9 +4,9 @@ title: K8S&AMP 安装步骤
 
 ## 一.安装包构成
 
-- kubespray：k8s集群和AMP平台的安装文件
+- kubespray：kubespray源码包
 - kubespray_cache：安装k8s和AMP平台需要用到的安装包和容器镜像
-- kubespray-v2.23.0.tar：kubespray安装环境镜像
+- kubespray-v2.23.0.tar：ansible运行环境docker镜像
 
 ## 二.安装步骤
 
@@ -50,14 +50,6 @@ ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_r
 
 ```shell
 ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa amp.yml
-```
-
-### 2.7 重置集群
-
-登录容器，docker exec -it 容器id
-
-```shell
-ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root reset.yml
 ```
 
 ## 三. 已验证OS版本
