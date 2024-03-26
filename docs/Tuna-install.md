@@ -1,5 +1,5 @@
 ---
-title: K8S&AMP 安装步骤
+title: K8S&Tuna 安装步骤
 ---
 
 ## 一.安装包构成
