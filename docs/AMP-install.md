@@ -4,15 +4,17 @@ title: K8S&AMP 安装步骤
 
 ## 一.安装包构成
 
-- kubespray：kubespray源码包
-- kubespray_cache：安装k8s和AMP平台需要用到的安装包和容器镜像
+- kubespray-master.zip：kubespray源码包
+- kubespray_cache20240109.tar.gz：安装k8s和AMP平台需要用到的安装包和容器镜像
 - kubespray-v2.23.0.tar：ansible运行环境docker镜像
+下载地址：链接：https://pan.baidu.com/s/107wpbEV_ZNhSm4wYJNNLnw  提取码：jvd4 
+
 
 ## 二.安装步骤
 
-### 2.1 拷贝安装包
-
-把安装包拷贝到安装机器上，解压，进入AMP目录
+### 2.1 准备安装节点，建议使用Centos、Ubuntu。
+1. 首先安装docker，支持的版本是18.09, 19.03, 20.10, 23.0 and 24.0. 推荐使用20.10。
+2. 将下载好的kubespray-master.zip和kubespray_cache20240109.tar.gz拷贝到安装节点并解压。
 
 ### 2.2 配置无密码访问
 
