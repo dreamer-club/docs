@@ -45,12 +45,23 @@ docker run -it -d --mount type=bind,source="$(pwd)"/kubespray,dst=/kubespray \
 ```shell
 ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa --become --become-user=root cluster.yml
 ```
+![k8s安装完成](https://github.com/dreamer-club/docs/assets/16743178/6ac5f231-9432-4858-9f5a-4b2b0a059aee)
 
 ### 2.6 安装kubevela
 
 ```shell
 ansible-playbook -i inventory/mycluster/hosts.yaml --private-key /root/.ssh/id_rsa amp.yml
 ```
+![AMP安装完成](https://github.com/dreamer-club/docs/assets/16743178/262f79cf-33bf-4c17-9279-0430cae22390)
+
+### 2.7 登录Tuna
+1. 浏览器输入k8s控制节点IP地址，我这里是 http://192.168.0.201/，首先设定登录账号密码。
+   ![输入账号密码](https://github.com/dreamer-club/docs/assets/16743178/93648e30-922a-4efb-81e1-5f826fa31b5d)
+2. 登录
+   ![登录界面](https://github.com/dreamer-club/docs/assets/16743178/eddb87e6-2a9f-4956-823b-f487453f47bc)
+3. 开始使用
+   ![登录之后](https://github.com/dreamer-club/docs/assets/16743178/57f466e6-9bfa-499b-97ac-6e801c5e7615)
+
 
 ## 三. 已验证OS版本
 
