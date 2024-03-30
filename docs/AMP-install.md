@@ -7,6 +7,7 @@ title: K8S&AMP 安装步骤
 - kubespray-master.zip：kubespray源码包
 - kubespray_cache20240109.tar.gz：安装k8s和AMP平台需要用到的安装包和容器镜像
 - kubespray-v2.23.0.tar：ansible运行环境docker镜像
+
 下载地址：链接：https://pan.baidu.com/s/107wpbEV_ZNhSm4wYJNNLnw  提取码：jvd4 
 
 
