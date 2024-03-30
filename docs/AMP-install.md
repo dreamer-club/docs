@@ -37,6 +37,37 @@ docker run -it -d --mount type=bind,source="$(pwd)"/kubespray,dst=/kubespray \
 
 登录容器，docker exec -it 容器id
 修改/kubespray/inventory/mycluster/hosts.yaml 文件，配置master节点、worker节点和etcd节点
+hosts.yaml文件示例：
+(node1是master节点，也是etcd节点，并且作为node节点。node2仅作为node节点)
+```
+all:
+  hosts:
+    node1:
+      ansible_host: 192.168.0.201
+      ip: 192.168.0.201
+      access_ip: 192.168.0.201
+    node2:
+      ansible_host: 192.168.0.202
+      ip: 192.168.0.202
+      access_ip: 192.168.0.202
+  children:
+    kube_control_plane:
+      hosts:
+        node1:
+    kube_node:
+      hosts:
+        node1:
+        node2:
+    etcd:
+      hosts:
+        node1:
+    k8s_cluster:
+      children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
+```
 
 ### 2.5 安装k8s集群
 
