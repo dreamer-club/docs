@@ -36,7 +36,8 @@ docker run -it -d --mount type=bind,source="$(pwd)"/kubespray,dst=/kubespray \
 ### 2.4 配置集群信息
 
 登录容器，docker exec -it 容器id
-修改/kubespray/inventory/mycluster/hosts.yaml 文件，配置master节点、worker节点和etcd节点
+修改/kubespray/inventory/mycluster/hosts.yaml 文件，配置master节点、worker节点和etcd节点。
+
 hosts.yaml文件示例：
 (node1是master节点，也是etcd节点，并且作为node节点。node2仅作为node节点)
 ```
