@@ -7,6 +7,7 @@ title: K8S&AMP 安装步骤
 - kubespray-master.zip：kubespray源码包
 - kubespray_cache20240109.tar.gz：安装k8s和AMP平台需要用到的安装包和容器镜像
 - kubespray-v2.23.0.tar：ansible运行环境docker镜像
+- install-docker-20.10.sh: docker自动安装脚本
 
 下载地址：链接：https://pan.baidu.com/s/107wpbEV_ZNhSm4wYJNNLnw  提取码：jvd4 
 
@@ -14,8 +15,9 @@ title: K8S&AMP 安装步骤
 ## 二.安装步骤
 
 ### 2.1 准备安装节点，建议使用Centos、Ubuntu。
-1. 首先安装docker，支持的版本是18.09, 19.03, 20.10, 23.0 and 24.0. 推荐使用20.10。
-2. 将下载好的kubespray-master.zip和kubespray_cache20240109.tar.gz拷贝到安装节点并解压。
+1. 将安装包下载下来并拷贝到安装节点，然后解压。
+2. 执行 sh install-docker-20.10.sh 安装docker，安装完之后启动docker。
+2. 将kubespray-master.zip和kubespray_cache20240109.tar.gz解压。
 
 ### 2.2 配置无密码访问
 
@@ -29,6 +31,7 @@ docker load -i kubespray-v2.23.0.tar
 ```
 
 ### 2.3 启动安装容器
+注意 kubespray，kubespray_cache目录的绝对路径。
 
 ```shell
 docker run -it -d --mount type=bind,source="$(pwd)"/kubespray,dst=/kubespray \
@@ -40,6 +43,8 @@ docker run -it -d --mount type=bind,source="$(pwd)"/kubespray,dst=/kubespray \
 
 登录容器，docker exec -it 容器id
 修改/kubespray/inventory/mycluster/hosts.yaml 文件，配置master节点、worker节点和etcd节点。
+
+注意：master节点至少采用2C-4G-40G以上配置。
 
 hosts.yaml文件示例：
 (node1是master节点，也是etcd节点，并且作为node节点。node2仅作为node节点)
