@@ -16,13 +16,17 @@ title: K8S&AMP 安装步骤
 
 ### 2.1 准备安装节点，建议使用Centos、Ubuntu。
 1. 将安装包下载下来并拷贝到安装节点，然后解压。
+   - unzip kubespray-master.zip
+   - tar -zxvf kubespray_cache20240109.tar.gz
+   - tar -xf kubespray-v2.23.0.tar
 2. 执行 sh install-docker-20.10.sh 安装docker，安装完之后启动docker。
-2. 将kubespray-master.zip和kubespray_cache20240109.tar.gz解压。
 
 ### 2.2 配置无密码访问
 
 配置安装节点到容器集群节点的ssh免密登录，以及第一个master节点到node节点之间的ssh免密登录。
 (`sync_host` 是将 `master[0]` 上的 `/etc/hosts` 同步到其他node 节点，因此需要 从 `master[0]`可以免密登录其他node节点)
+例: 在安装节点执行, ssh-copy-id root@192.168.0.201 表示做安装节点到容器集群节点192.168.0.201做免密认证，输入 192.168.0.201的用户名和密码之后，
+免密认证完成， 执行 ssh root@192.168.0.201 无需输入密码可以登录192.168.0.201节点，表示免密认证成功。
 
 ### 2.3 加载安装镜像
 
